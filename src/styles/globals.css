@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dark .img-shadow {
+  width: 250px;
+  -webkit-filter: drop-shadow(5px 10px 5px #090a01e2);
+  filter: drop-shadow(5px 10px 5px #090a01e2);
+}
+
+.img-shadow {
+  width: 250px;
+  -webkit-filter: drop-shadow(5px 10px 5px #28281487);
+  filter: drop-shadow(5px 10px 5px #28281487);
+}
+
+.dark .simplebar-scrollbar::before {
+  background-color: white;
+}
