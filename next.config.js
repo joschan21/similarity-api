@@ -35,7 +35,7 @@ const nextConfig = {
           {
             key: 'Content-Security-Policy',
             value:
-              "default-src 'self'; frame-src: 'self'; script-src 'self' https: 'unsafe-inline'; connect-src 'self'; img-src 'self'; style-src 'self' https: 'unsafe-inline'; frame-ancestors 'self'; form-action 'self';",
+              "default-src 'self'; frame-src 'self'; script-src 'self' https: 'unsafe-inline'; connect-src 'self'; img-src 'self'; style-src 'self' https: 'unsafe-inline'; frame-ancestors 'self'; form-action 'self';",
           },
         ],
       },
