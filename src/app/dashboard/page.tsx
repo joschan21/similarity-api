@@ -4,6 +4,13 @@ import { authOptions } from '@/lib/auth'
 import { db } from '@/lib/db'
 import { getServerSession } from 'next-auth'
 
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Similarity API | Dashboard',
+  description: 'Free & open-source text similarity API',
+}
+
 const page = async () => {
   const user = await getServerSession(authOptions)
   if (!user) return <p>no user</p>
