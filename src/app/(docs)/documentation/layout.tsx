@@ -1,5 +1,4 @@
 import '@/styles/globals.css'
-import '@/styles/heading.css'
 
 export default function RootLayout({
   children,
