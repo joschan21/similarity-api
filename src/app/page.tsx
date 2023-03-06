@@ -34,6 +34,7 @@ export default function Home() {
 
           <div className='relative w-full max-w-xl lg:max-w-3xl lg:left-1/2 aspect-square lg:absolute'>
             <Image
+              priority
               className='img-shadow overflow-visible'
               quality={100}
               style={{ objectFit: 'contain' }}
