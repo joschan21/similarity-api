@@ -40,9 +40,6 @@ export default withAuth(
 
     const sensitiveRoutes = ['/dashboard']
 
-    const res = NextResponse.next()
-    res.headers.set('Content-Security-Policy', "default-src 'self'")
-
     if (isAuthPage) {
       if (isAuth) {
         return NextResponse.redirect(new URL('/dashboard', req.url))
