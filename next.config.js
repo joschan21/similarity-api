@@ -3,7 +3,7 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  headers: async () => {
+  async headers() {
     return [
       {
         source: '/(.*)',
@@ -25,10 +25,6 @@ const nextConfig = {
             value: 'same-origin',
           },
           {
-            key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
-          },
-          {
             key: 'X-Permitted-Cross-Domain-Policies',
             value: 'none',
           },
@@ -38,10 +34,13 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self'; frame-ancestors 'self'; form-action 'self';",
-      }
+            value:
+              "default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self'; frame-ancestors 'self'; form-action 'self';",
+          },
+        ],
+      },
     ]
-  }
+  },
 }
 
 module.exports = nextConfig
