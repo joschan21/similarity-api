@@ -44,7 +44,7 @@ const MobileMenu = () => {
           </DropdownMenuTrigger>
           <DropdownMenuContent className='w-56'>
             <DropdownMenuGroup onClick={() => setOpen(false)}>
-              <DropdownMenuItem>
+              <DropdownMenuItem asChild>
                 {session ? (
                   <Link
                     href='/dashboard'
@@ -53,17 +53,19 @@ const MobileMenu = () => {
                     <span>Dashboard</span>
                   </Link>
                 ) : (
-                  <Link href='/login' className='flex items-center gap-1.5'>
+                  <Link
+                    href='/login'
+                    className='flex bg-red-500 w-full items-center gap-1.5'>
                     <LayoutDashboard className='mr-2 h-5 w-5' />
-                    <span>Log in</span>
+                    <span>Sign in</span>
                   </Link>
                 )}
               </DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>
+              <DropdownMenuItem asChild>
                 <Link
                   href='/documentation'
-                  className='w-full flex items-center gap-1.5'>
+                  className='w-full flex bg-red-500 items-center gap-1.5'>
                   <Info className='mr-2 h-5 w-5' />
                   <span>Docs</span>
                 </Link>

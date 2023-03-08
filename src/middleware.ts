@@ -34,9 +34,7 @@ export default withAuth(
     // Manage route protection
     const token = await getToken({ req })
     const isAuth = !!token
-    const isAuthPage =
-      req.nextUrl.pathname.startsWith('/login') ||
-      req.nextUrl.pathname.startsWith('/register')
+    const isAuthPage = req.nextUrl.pathname.startsWith('/login')
 
     const sensitiveRoutes = ['/dashboard']
 
@@ -57,9 +55,7 @@ export default withAuth(
         from += req.nextUrl.search
       }
 
-      return NextResponse.redirect(
-        new URL(`/login?from=${encodeURIComponent(from)}`, req.url)
-      )
+      return NextResponse.redirect(new URL('/login', req.url))
     }
   },
   {
@@ -75,5 +71,5 @@ export default withAuth(
 )
 
 export const config = {
-  matcher: ['/', '/login', '/register', '/dashboard/:path*', '/api/:path*'],
+  matcher: ['/', '/login', '/dashboard/:path*', '/api/:path*'],
 }

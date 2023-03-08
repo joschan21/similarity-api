@@ -17,11 +17,10 @@ import { toast } from './ui/toast'
 
 interface ApiKeyOptionsProps {
   // passing of entire object not allowed due to date property not being serializable
-  apiKeyId: string
   apiKeyKey: string
 }
 
-const ApiKeyOptions: FC<ApiKeyOptionsProps> = ({ apiKeyId, apiKeyKey }) => {
+const ApiKeyOptions: FC<ApiKeyOptionsProps> = ({ apiKeyKey }) => {
   const router = useRouter()
   const [isCreatingNew, setIsCreatingNew] = useState<boolean>(false)
   const [isRevoking, setIsRevoking] = useState<boolean>(false)
@@ -29,7 +28,7 @@ const ApiKeyOptions: FC<ApiKeyOptionsProps> = ({ apiKeyId, apiKeyKey }) => {
   const createNewApiKey = async () => {
     setIsCreatingNew(true)
     try {
-      await revokeApiKey({ keyId: apiKeyId })
+      await revokeApiKey()
       await createApiKey()
       router.refresh()
     } catch (error) {
@@ -46,7 +45,7 @@ const ApiKeyOptions: FC<ApiKeyOptionsProps> = ({ apiKeyId, apiKeyKey }) => {
   const revokeCurrentApiKey = async () => {
     setIsRevoking(true)
     try {
-      await revokeApiKey({ keyId: apiKeyId })
+      await revokeApiKey()
       router.refresh()
     } catch (error) {
       toast({

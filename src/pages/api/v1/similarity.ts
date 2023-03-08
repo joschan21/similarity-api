@@ -17,11 +17,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (!apiKey) {
     return res.status(401).json({ error: 'Unauthorized' })
   }
-  const parsed = reqSchema.safeParse(body)
-
-  if (!parsed.success) {
-    return res.status(400).json({ error: 'Bad Request' })
-  }
 
   try {
     const { text1, text2 } = reqSchema.parse(body)

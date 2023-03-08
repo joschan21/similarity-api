@@ -6,9 +6,7 @@ import UserAuthForm from '@/components/UserAuthForm'
 import Link from 'next/link'
 import { FC } from 'react'
 
-interface pageProps {}
-
-const page: FC<pageProps> = ({}) => {
+const page: FC = () => {
   return (
     <>
       <div className='absolute inset-0 mx-auto container flex h-screen flex-col items-center justify-center'>

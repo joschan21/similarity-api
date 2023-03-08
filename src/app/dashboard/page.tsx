@@ -5,6 +5,7 @@ import { db } from '@/lib/db'
 import { getServerSession } from 'next-auth'
 
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
 export const metadata: Metadata = {
   title: 'Similarity API | Dashboard',
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 
 const page = async () => {
   const user = await getServerSession(authOptions)
-  if (!user) return <p>no user</p>
+  if (!user) return notFound()
 
   const apiKey = await db.apiKey.findFirst({
     where: { userId: user.user.id, enabled: true },
