@@ -55,7 +55,7 @@ const MobileMenu = () => {
                 ) : (
                   <Link
                     href='/login'
-                    className='flex bg-red-500 w-full items-center gap-1.5'>
+                    className='flex w-full items-center gap-1.5'>
                     <LayoutDashboard className='mr-2 h-5 w-5' />
                     <span>Sign in</span>
                   </Link>
@@ -65,7 +65,7 @@ const MobileMenu = () => {
               <DropdownMenuItem asChild>
                 <Link
                   href='/documentation'
-                  className='w-full flex bg-red-500 items-center gap-1.5'>
+                  className='w-full flex items-center gap-1.5'>
                   <Info className='mr-2 h-5 w-5' />
                   <span>Docs</span>
                 </Link>

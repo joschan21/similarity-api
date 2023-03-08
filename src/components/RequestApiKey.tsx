@@ -74,7 +74,7 @@ const RequestApiKey: FC<RequestApiKeyProps> = ({}) => {
             placeholder='Request an API key to display it here'
           />
         </div>
-        <div className='mt-3 sm:mt-0 sm:ml-4 sm:flex-shrink-0'>
+        <div className='mt-6 flex justify-center sm:mt-0 sm:ml-4 sm:flex-shrink-0'>
           <Button disabled={!!apiKey} isLoading={isCreating}>
             Request key
           </Button>
