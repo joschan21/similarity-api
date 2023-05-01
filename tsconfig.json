@@ -29,10 +29,10 @@
   },
   "include": [
     "next-env.d.ts",
+    "next.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    "C:\\Users\\Josch\\Desktop\\similarity-api\\.next/types/**/*.ts"
+    ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }
