@@ -4,12 +4,9 @@ import { nanoid } from 'nanoid';
 import { z } from 'zod';
 import { db } from '@/lib/db';
 import { NextResponse } from 'next/server';
-import { CreateApiData } from '@/types/api';
+import { CreateApiData } from '@/types/api/key';
 
-export async function GET(
-  req: Request,
-  res: Response
-): Promise<NextResponse<CreateApiData>> {
+export async function GET(): Promise<NextResponse<CreateApiData>> {
   try {
     const user = await getServerSession(authOptions).then((res) => res?.user);
 

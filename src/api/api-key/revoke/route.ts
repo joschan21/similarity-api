@@ -1,14 +1,11 @@
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { NextResponse } from 'next/server';
-import { RevokeApiData } from '@/types/api';
+import { RevokeApiData } from '@/types/api/key';
 import { db } from '@/lib/db';
 import { z } from 'zod';
 
-export async function POST(
-  req: Request,
-  res: Response
-): Promise<NextResponse<RevokeApiData>> {
+export async function POST(): Promise<NextResponse<RevokeApiData>> {
   try {
     const user = await getServerSession(authOptions).then((res) => res?.user);
     if (!user) {
