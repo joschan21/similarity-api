@@ -14,6 +14,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const body = req.body as unknown
 
   const apiKey = req.headers.authorization
+
   if (!apiKey) {
     return res.status(401).json({ error: 'Unauthorized' })
   }
