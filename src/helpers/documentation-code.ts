@@ -3,7 +3,7 @@ export const nodejs = `const axios = require("axios");
 const options = {
     method: 'POST',
     url: 'https://similarityapi.com/api/v1/similarity',
-    params: {
+    data: {
       text1: 'First text',
       text2: 'Second text'
     },
